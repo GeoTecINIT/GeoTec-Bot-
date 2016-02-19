@@ -1,6 +1,5 @@
 <?php
-
-$type = 'telegram'; require('keys.php');
+$type = 'telegram'; require_once('keys.php');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 require('functions.php');
 
@@ -136,23 +135,18 @@ function processMessage($message) {
 		 $msg = 'hola '.$text;
 		 $getBot = array_search($text, $keyb);
 		 $bot_id = $getBot+2;
-		 $responseurl = $path_to_bot.'?bot_id='.$bot_id.'&say='.rawurlencode($msg).'&convo_id='.$chat_id.'&format=json';
-	  	 if($responseurl != ''){
-	  	 	$response = file_get_contents($responseurl);
-	  	 	$response = json_decode($response, true);
-	  		apiRequest("sendMessage", array('chat_id' => $chat_id, "reply_to_message_id" => $message_id,"text" => $response['botsay']));
-			}
+		 $responseurl = PATH_TO_BOT.'?bot_id='.$bot_id.'&say='.rawurlencode($msg).'&convo_id='.$chat_id.'&format=json';
+	  	 $response = processResponse($responseurl);
+		 apiRequest("sendMessage", array('chat_id' => $chat_id, "reply_to_message_id" => $message_id,"text" => $response['botsay']));
+			
 	   
      } else if (strpos($text, "/stop") === 0) {
 		 // debería borrar el registro del bot
        // stop now
      } else if ($text) {
-	  	 $responseurl = $path_to_bot.'?say='.rawurlencode($text).'&convo_id='.$chat_id.'&format=json';
-	  	 if($responseurl != ''){
-	  	 	$response = file_get_contents($responseurl);
-	  	 	$response = json_decode($response, true);
-	  		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => $response['botsay']));
-			}
+	  	 $responseurl = PATH_TO_BOT.'?say='.rawurlencode($text).'&convo_id='.$chat_id.'&format=json';
+	  	 $response = processResponse($responseurl);
+		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => $response['botsay']));
      }
 	 
 	 

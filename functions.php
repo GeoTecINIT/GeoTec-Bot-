@@ -60,5 +60,17 @@ function jq_get_convo_id($tel)
   setcookie($cookie_name, $convo_id);
   return $convo_id;
 }
-
+function processResponse($responseurl){
+ 	 if($responseurl != ''){
+ 	 	$response = file_get_contents($responseurl);
+ 	 	if(!$response){
+		$response = "Lo siento, no he podido leer bien el mensaje. Vuelve mas tarde por favor!";
+ 	 	}else{
+ 	 		$response = json_decode($response, true);
+		}
+ 	 }else{
+ 	 	$response = "No has enviado ningún mensaje, lo siento pero no puedo responderte.";	
+ 	 } 
+	 return $response;
+}
 ?>
