@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aiml PUBLIC "-//W3C//DTD Specification Version 1.0//EN" "http://www.program-o.com/xml/aiml.dtd">
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1">
+  <!-- CAPITALES -->
+  
+  
+    <category>
+  <pattern>Capital de <set>estados</set></pattern>
+      <template>La capital de <star/> <map name="capitales"><star/></map></template>
+  </category>
+  
+      <category>
+  <pattern>Cuál es La capital de <set>estados</set></pattern>
+      <template>La capital de <star/> <map name="capitales"><star/></map></template>
+  </category>
+  
+      <category>
+  <pattern>Y La capital de <set>estados</set></pattern>
+      <template>La capital de <star/> <map name="capitales"><star/></map></template>
+  </category>
+  
+      <category>
+  <pattern>Y LA DE <set>estados</set></pattern>
+      <template>La capital de <star/> <map name="capitales"><star/></map></template>
+  </category>
+  
+--------------------------------
+  
+      <category>
+  <pattern>Capital de <set>capitales</set></pattern>
+      <template><star/> Es La capital de <map name="estados"><star/></map></template>
+  </category>
+  
+      <category>
+  <pattern>Cuál es La capital de <set>capitales</set></pattern>
+      <template><star/>  Es La capital de <map name="estados"><star/></map></template>
+  </category>
+  
+      <category>
+  <pattern>Y La capital de <set>capitales</set></pattern>
+      <template><star/>  Es La capital de <map name="estados"><star/></map></template>
+  </category>
+  
+      <category>
+  <pattern>Y LA DE <set>capitales</set></pattern>
+      <template><star/> Es La capital de <map name="estados"><star/></map></template>
+  </category>
+  
+--------------------------------
+  
+  
+  
+  
+  
+    <category>
+  <pattern>Capital de *</pattern>
+      <template><star/> No es un estado de la República.</template>
+  </category>
+  
+        <category>
+  <pattern>Cuál es La capital de *</pattern>
+      <template><star/> No es un estado de la República.</template>
+  </category>
+  
+      <category>
+  <pattern>Y La capital de *</pattern>
+      <template><star/> No es un estado de la República.</template>
+  </category>
+  
+      <category>
+  <pattern>Y LA DE *</pattern>
+      <template><star/> No es un estado de la República.</template>
+  </category>
+  
+  
+  
+  
+  
+</aiml>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aiml PUBLIC "-//W3C//DTD Specification Version 1.0//EN" "http://www.program-o.com/xml/aiml.dtd">
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1">
+
+
+                             <!-- UJI -->
+  
+  
+<category>
+<pattern>UJI</pattern>
+<template>Te gusta estudiar en la <set name="topic">UJI</set>?</template>
+</category>
+
+<category>
+<pattern>^ UJI ^</pattern>
+<template><srai>UJI</srai></template>
+</category>
+
+
+<topic name="UJI">
+
+<category>
+<pattern>SI</pattern>
+<template>Qué materia te gusta más?</template>
+</category>
+
+<category>
+<pattern>No se</pattern>
+<template>Qué te gusta hacer entonces?</template>
+</category>
+
+<category>
+<pattern>NO</pattern>
+<template>De acuerdo, de qué quieres hablar entonces?<set name="topic"></set></template>
+</category>
+
+</topic>
+</aiml>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+                               <!-- Otros proyectos -->
+  
+  
+<category>
+<pattern>* *</pattern>
+<template>
+<random>
+<li>Interesante, verdad? Ya habeis hablado con <set topic="otrosobj">otros objetos</set> del proyecto? </li>
+<li>Vale, ya hablaste con <set topic="otrosobj">otros objetos</set> del proyecto?</li>
+<li>Quieres saber más sobre el <set topic="proyecto">proyecto</set>?</li>
+</random>
+</template>
+</category>
+
+
+<topic name="otrosobj">
+
+<category>
+<pattern>SI</pattern>
+<template>
+<random>
+<li>Que bien! y que te ha parecido el proyecto?</li>
+<li>Me puedes contar que te ha parecido el proyecto?</li>    
+</random></template>
+</category>
+
+<category>
+<pattern>NO</pattern>
+<template>
+	<random>
+	<li>Pues, es una buena oportunidad cuando estes aburrido.</li>
+	<li>Deberías intentarlo, que te parece el proyecto?</li>    
+	</random></template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<template>
+	<random>
+	<li>Gracias, recuerda que de a ratos se acuerdan de nosotros y nos actualizan el sistema, no dejes de hablarnos ;)</li>
+	<li>Gracias por tu opinión! Recuerda que puedes hablar con otros objetos usando el twitter HolaBotCS</li>   
+	<li>Muy bien, se lo diré a mi programador. Recuerda hablar con más objetos así podremos conocer mejor a los humanos.</li> 
+	</random></template>
+</category>
+
+</topic>
+<topic name="otrosobj">
+	<category>
+	<pattern>SI</pattern>
+	<template>Hola Castellón es un proyecto del grupo GEOTEC en la UJI.</template>
+	</category>
+
+	<category>
+	<pattern>NO</pattern>
+	<template>Vale, hablemos de otra cosa entonces....</template>
+	</category>
+	
+</topic>
+	
+</aiml>

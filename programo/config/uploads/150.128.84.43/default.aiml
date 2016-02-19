@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+                               <!-- Biblioteca -->
+  
+  
+<category>
+<pattern>biblioteca</pattern>
+<template>
+<random>
+<li>Hola! Bienvenido a la biblioteca. Cómo te llamas?<think><set name="topic">NAME</set></think></li>
+<li>Que tal? Te gusta estudiar en la <set name="topic">biblioteca</set>?</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>hola biblioteca</pattern>
+<template><srai>biblioteca</srai></template>
+</category>
+
+<category>
+<pattern>hola</pattern>
+<template><srai>biblioteca</srai></template>
+</category>
+
+<category>
+<pattern>hola _</pattern>
+<template><srai>biblioteca</srai></template>
+</category>
+
+<category>
+<pattern>holas</pattern>
+<template><srai>biblioteca</srai></template>
+</category>
+
+<category>
+<pattern>_ biblioteca</pattern>
+<template><srai>biblioteca</srai></template>
+</category>
+
+<!-- ___________  TOPIC NAME ___________ -->
+<topic name="NAME">
+	
+<category>
+<pattern>NOMBRE</pattern>
+<template>Mucho gusto, <set name="name"><star/></set>. Qué vienes a estudiar?<think><set name="topic">MATERIA</set></think></template>
+</category>
+
+<category>
+<pattern>_</pattern>
+<template><srai>NOMBRE</srai></template>
+</category>
+
+<category>
+<pattern>ME LLAMO *</pattern>
+<template><srai>NOMBRE</srai></template>
+</category>
+
+<category>
+<pattern>MI NOMBRE ES *</pattern>
+<template><srai>NOMBRE</srai></template>
+</category>
+
+<category>
+<pattern>SOY *</pattern>
+<template><srai>NOMBRE</srai></template>
+</category>
+
+<category>
+<pattern>ME DICEN *</pattern>
+<template><srai>NOMBRE</srai></template>
+</category>
+</topic>
+
+<!-- ___________  TOPIC BIBLIOTECA ___________ -->
+<topic name="biblioteca">
+	
+<category>
+<pattern>_</pattern>
+<that>Que tal Te gusta estudiar en la biblioteca</that>
+<template>
+	<think>
+		<set name="answr"><star/></set>
+		<condition name="answr">
+			<li value="SI"><set name="message">SI</set></li>
+			<li value="NO"><set name="message">NO</set></li>
+			<li value="NO LO SE"><set name="message">NO SE</set></li>
+			<li value="MAS O MENOS"><set name="message">NO SE</set></li>
+			<li value="NO SE"><set name="message">NO SE</set></li>
+			<li value="^ NO SE"><set name="message">NO SE</set></li>
+		</condition>
+	</think>
+	<condition name="message">
+		<li value="SI">
+			<random>
+			<li><think><set name="topic">LUGAR</set></think>Y de donde eres?</li>
+			<li><think><set name="topic">MATERIA</set></think>Que bien! Qué te gusta estudiar?</li>    
+			</random>
+		</li>
+		<li value="NO">Que lástima, por que no te gusta?<set name="topic"></set></li>
+		<li value="NO SE">De acuerdo, quieres hablar de otra cosa entonces?<set name="topic"></set></li>
+	</condition>
+</template>
+</category>
+
+<!-- Sale del loop y cierra el topic -->
+<category>
+<pattern>*</pattern>
+<template>
+<think><set name="topic"></set></think>
+</template>
+</category> 
+</topic>
+
+		<!-- MATERIA -->
+
+<topic name="MATERIA">
+<category>
+<pattern>MATERIA</pattern>
+<template><random>
+    <li>Suena interesante. Sabías que X personas vinieron esta semana a estudiar lo mismo?</li>
+    <li>Muy bien! pareces muy comprometido. Y como vas?</li>
+</random></template>
+</category>
+
+<category>
+<pattern>_</pattern>
+<template><srai>MATERIA</srai></template>
+</category>
+
+<category>
+<pattern>ME GUSTA *</pattern>
+<template><srai>MATERIA</srai></template>
+</category>
+
+<category>
+<pattern>PREFIERO *</pattern>
+<template><srai>MATERIA</srai></template>
+</category>
+
+
+<category>
+<pattern>No se</pattern>
+<that>Que vienes a estudiar</that>
+<template>Qué vines a hacer aquí entonces?</template>
+</category>
+
+
+<category>
+<pattern>_</pattern>
+<that>Y COMO VAS</that>
+<template>
+	<think>
+		<set name="answr"><star/></set>
+		<condition name="answr">
+			<li value="BIEN"><set name="message">BIEN</set></li>
+			<li value="_ BIEN"><set name="message">BIEN</set></li>
+			<li value="_ BIEN *"><set name="message">BIEN</set></li>
+			<li value="MAL"><set name="message">MAL</set></li>
+			<li value="_ MAL"><set name="message">MAL</set></li>
+			<li value="_ MAL *"><set name="message">MAL</set></li>
+			<li value="NO LO SE"><set name="message">NO SE</set></li>
+			<li value="MAS O MENOS"><set name="message">NO SE</set></li>
+			<li value="NO SE"><set name="message">NO SE</set></li>
+			<li value="^ NO SE"><set name="message">NO SE</set></li>
+		</condition>
+	</think>
+	<condition name="message">
+		<li value="BIEN">
+			<random>
+				<li>Sigue asi! que te irá bien. La próxima vez me cuentas como te fué.</li>
+				<li>Pues me alegro, que tengas mucha suerte. Y recuérdame saludarme la próxima vez!</li> 
+			</random>
+		</li>
+		<li value="NO">Ánimo, estás haciendo el esfuerzo y seguro te irá bien. Recuerda que puedes hablarme por twitter a HolaBotCS<set name="topic"></set></li>
+		<li value="NO SE">Ánimo, estás haciendo el esfuerzo y seguro te irá bien. Recuerda que puedes hablarme por twitter a HolaBotCS<set name="topic"></set></li>
+	</condition>
+</template>
+</category>
+
+<!-- Sale del loop y cierra el topic -->
+<category>
+<pattern>*</pattern>
+<template>
+<think><set name="topic"></set></think>
+</template>
+</category> 
+</topic>
+
+	<!-- LUGAR -->
+<topic name="LUGAR">	
+<category>
+<pattern>LUGAR</pattern>
+<that>Y de donde eres</that>
+<template>Que bonito <set name="lugar"><star/></set>, y que te gusta estudiar?</template>
+</category>
+
+<category>
+<pattern>DE *</pattern>
+<that>Y de donde eres</that>
+<template><srai>LUGAR</srai></template>
+</category>
+
+<category>
+<pattern>SOY DE *</pattern>
+<that>Y de donde eres</that>
+<template><srai>LUGAR</srai></template>
+</category>
+
+
+<category>
+<pattern>*</pattern>
+<that>Y de donde eres</that>
+<template><srai>LUGAR</srai></template>
+</category>
+
+<!-- Sale del loop y cierra el topic -->
+<category>
+<pattern>*</pattern>
+<template>
+<think><set name="topic"></set></think>
+</template>
+</category> 
+</topic>
+
+
+<!-- Cierra AIML -->
+
+</aiml>

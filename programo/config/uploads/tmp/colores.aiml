@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aiml PUBLIC "-//W3C//DTD Specification Version 1.0//EN" "http://www.program-o.com/xml/aiml.dtd">
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1">
+  <!-- COLORES -->
+
+
+      <category>
+  <pattern>El <set>colores</set> es un color</pattern>
+      <template><star/> es un color</template>
+  </category>
+
+
+      <category>
+  <pattern>Color <set>colores</set></pattern>
+      <template><star/> es un color</template>
+  </category>
+
+
+      <category>
+  <pattern>Qué es <set>colores</set></pattern>
+      <template><star/> es un color</template>
+  </category>
+
+
+
+<category>
+  <pattern><set>colores</set> es un color</pattern>
+      <template>Si <star/> es un color</template>
+  </category>
+  
+  
+      <category>
+  <pattern>Color <set>colores</set> es un color</pattern>
+      <template>Si <star/> es un color</template>
+  </category>
+  
+        <category>
+  <pattern>El color <set>colores</set> es un color</pattern>
+      <template>Si <star/> es un color</template>
+  </category>
+  
+        <category>
+  <pattern>Y el <set>colores</set></pattern>
+      <template>Si <star/> es un color</template>
+  </category>
+  
+        <category>
+  <pattern>Y <set>colores</set></pattern>
+      <template>Si <star/> es un color</template>
+  </category>
+  
+        <category>
+  <pattern><set>colores</set> es un color</pattern>
+      <template>Si <star/> es un color</template>
+  </category>
+  
+  
+  
+    <category>
+  <pattern>* es un color</pattern>
+      <template>No, <star/> no es un color</template>
+  </category>  
+    
+    
+    
+    
+    
+</aiml>

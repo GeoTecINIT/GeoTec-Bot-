@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aiml PUBLIC "-//W3C//DTD Specification Version 1.0//EN" "http://www.program-o.com/xml/aiml.dtd">
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1">
+
+
+                     <!-- CHISTES -->
+  
+  <category>
+<pattern>chistes</pattern>
+<template>Quieres que te cuente <set name="topic">chistes</set>?</template>
+</category>
+
+<category>
+<pattern>_ chistes</pattern>
+<template><srai>chistes</srai></template>
+</category>
+
+<category>
+<pattern>_ chiste</pattern>
+<template><srai>chistes</srai></template>
+</category>
+
+
+<topic name="chistes">
+
+<category>
+<pattern>SI</pattern>
+<template><random>
+<li>Dos madres hablando:<br/>
+- ¡Dígale a su hijo que me deje de imitar!<br/>
+- Jaimito, ¡deja de hacerte el idiota!<br/>
+Te cuento otro??</li>
+<li>Un preso va y le pregunta a otro:<br/>
+- Oye, ¿y tú por qué estás aquí?.<br/>
+Y el otro va y le contesta:<br/>
+- Pues porque no me dejan salir...<br/>
+Otro???</li>
+<li>Un ciego le pregunta a un cojo:<br/>
+- ¿Qué tal andas?<br/>
+Y el cojo le contesta:<br/>
+- Pues ya ves.<br/>
+Qué tal otro?</li>
+<li>Yo para adelgazar sigo la dieta de la manzana:<br/> 
+Me compré un Iphone y ya no tengo para comer.<br/>
+    Quieres otro?</li>
+<li>- ¿Me da una entrada para el teatro?<br/>
+- ¿Para Los Miserables?<br/>
+-Mire, somos pobres pero respétenos.<br/>
+JEJE, otro?</li>
+<li>- ¿Cuál es el colmo de un zapatero?<br/>
+- Pues tener una Mujerzuela...<br/>
+Otro?, tengo más...</li>
+<li>- ¿Cuál es la diferencia entre un jefe y un terrorista?.<br/>
+- Con el terrorista se puede negociar.<br/>
+OTRO?</li>
+<li>- Me tienes harta Miguel ...¡solo piensas en comer!<br/>
+- ¿A qué te refieres croquetamente?<br/>
+JEJE, otro?</li>
+<li>¿Cuál es el colmo de un inmortal?<br/>
+Que le pongan cadena perpetua.<br/>
+JEJE, otro?</li>
+<li>- ¡Maestra! ¡Un niño se ha caído de la ventana!<br/>
+- ¡Qué horror!!!!... Se dice "por la ventana".<br/>
+JAJAJA, qué tal otro..</li>
+</random></template>
+</category>
+
+<category>
+<pattern>OK</pattern>
+<template><srai>SI</srai></template>
+</category>
+
+<category>
+<pattern>VA</pattern>
+<template><srai>SI</srai></template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<template><srai>SI</srai> Perdón, pero eso fué un si o un no?</template>
+</category>
+
+<category>
+<pattern>NO</pattern>
+<template>De acuerdo, entonces de que quieres hablar?<set name="topic"></set></template>
+</category>
+
+
+
+
+
+</topic>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</aiml>

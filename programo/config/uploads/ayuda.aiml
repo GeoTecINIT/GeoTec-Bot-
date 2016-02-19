@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+
+
+                             <!-- UJI -->
+  
+  
+<category>
+<pattern>AYUDA</pattern>
+<template>Hola! Necesitas <set name="topic">AYUDA</set>? Puedes preguntarme cómo funciona con: FUNC o puedes pedirme más información con:INFO</template>
+</category>
+
+<category>
+<pattern>^ AYUDA ^</pattern>
+<template><srai>AYUDA</srai></template>
+</category>
+
+
+<topic name="AYUDA">
+
+<category>
+<pattern>FUNC</pattern>
+<template>Este es un experimento del proyecto GEO-C de departamento de GeoTec en la Universitat Jaume I. Queremos darle vida a algunos objetos. Cuando veas un cartel indicador, puedes saludarlo con "Hola" + objeto, y te responderá! </template>
+</category>
+
+<category>
+<pattern>INFO</pattern>
+<template>Hola! si quieres más información puedes acceder al sitio http://paths.manuchis.com.ar y allí te ayudaremos!</template>
+</category>
+
+<category>
+<pattern>NO</pattern>
+<template>De acuerdo, de qué quieres hablar entonces?<set name="topic"></set></template>
+</category>
+
+</topic>
+</aiml>

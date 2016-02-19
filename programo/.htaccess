@@ -1,0 +1,2 @@
+#Adjust default time zone 
+SetEnv ID Europe/Madrid

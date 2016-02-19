@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aiml PUBLIC "-//W3C//DTD Specification Version 1.0//EN" "http://www.program-o.com/xml/aiml.dtd">
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1">
+
+                               <!-- Biblioteca -->
+  
+  
+<category>
+<pattern>biblioteca</pattern>
+<template>
+<random>
+<li>Hola! Bienvenido a la <set name="topic">biblioteca</set>. Cómo te llamas?</li>
+<li>Te gusta estudiar en la <set name="topic">biblioteca</set>?</li>
+</random>
+</template>
+</category>
+
+<category>
+<pattern>hola biblioteca</pattern>
+<template><srai>biblioteca</srai></template>
+</category>
+
+<category>
+<pattern>* biblioteca</pattern>
+<template><srai>biblioteca</srai></template>
+</category>
+
+
+<topic name="biblioteca">
+
+<category>
+<pattern>*</pattern>
+<that>COMO TE LLAMAS</that>
+<template>Mucho gusto, <set name="name"><star/></set>. Qué vienes a estudiar?</template>
+</category>
+
+<category>
+<pattern>SI</pattern>
+<template>
+<random>
+<li>Qué materia te gusta más?</li>
+<li>Qué vienes a estudiar?</li>    
+</random></template>
+</category>
+
+<category>
+<pattern>MATERIA</pattern>
+<template><random>
+    <li>Suena interesante. Sabías que X personas vinieron esta semana a estudiar lo mismo?</li>
+    <li>Muy bien! pareces muy comprometido. Y como vas?</li>
+</random></template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>QUE VIENES A ESTUDIAR</that>
+<template><srai>MATERIA</srai></template>
+</category>
+
+<category>
+<pattern>*</pattern>
+<that>QUE MATERIA TE GUSTA MAS</that>
+<template><srai>MATERIA</srai></template>
+</category>
+
+<category>
+<pattern>No se</pattern>
+<template>Qué vines a hacer aquí entonces?</template>
+</category>
+
+<category>
+<pattern>NO</pattern>
+<template>De acuerdo, quieres hablar de otra cosa entonces?<set name="topic"></set></template>
+</category>
+
+</topic>
+</aiml>

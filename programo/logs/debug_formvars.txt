@@ -1,0 +1,847 @@
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => html
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => json
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => json
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
+Empty input! form vars = Array
+(
+    [convo_id] => 
+    [bot_id] => 2
+    [say] => 
+    [format] => 
+    [debug_mode] => 
+    [debug_level] => 
+    [name] => 
+)
+
