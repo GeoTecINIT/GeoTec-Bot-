@@ -15,4 +15,4 @@ Any further comments, write me!
 
 
 PERSONAL NOTES (IGNORE THIS): 
-El timezone no funciona (por lo menos en mi servidor, ignorar esto), está por defecto en: GMT-8
+> El timezone no funciona (por lo menos en mi servidor, ignorar esto), está por defecto en: GMT-8
