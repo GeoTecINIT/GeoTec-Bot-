@@ -6,6 +6,7 @@ programo/logs/admin.error.log
 programo/logs/error.log
 programo/logs/log.reader.error.log
 programo/chatbot/debug/*
+!programo/chatbot/debug/index.php
 
 # OS generated files #
 ######################
