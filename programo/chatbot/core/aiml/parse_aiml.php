@@ -491,7 +491,7 @@
     //number of srai iterations - will stop recursion if it is over 10
     $srai_iterations++;
     runDebug(__FILE__, __FUNCTION__, __LINE__, "Incrementing srai iterations to $srai_iterations", 4);
-    if ($srai_iterations > 10)
+    if ($srai_iterations > 15)
     {
       runDebug(__FILE__, __FUNCTION__, __LINE__, "ERROR - Too much recursion breaking out", 1);
       $convoArr['aiml']['parsed_template'] = $error_response;
