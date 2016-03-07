@@ -7,6 +7,7 @@ programo/logs/error.log
 programo/logs/log.reader.error.log
 programo/chatbot/debug/*
 !programo/chatbot/debug/index.php
+PyListener/keys.py
 
 # OS generated files #
 ######################
@@ -17,3 +18,4 @@ programo/chatbot/debug/*
 .Trashes
 ehthumbs.db
 Thumbs.db
+*.pyc
