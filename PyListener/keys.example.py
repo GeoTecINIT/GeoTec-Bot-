@@ -1,6 +1,4 @@
-#this is a reference File
-#To use this file fill the following authentication variables and
-#remove the '_' character from filename
+#!/usr/bin/python
 
 import tweepy
 
