@@ -64,7 +64,7 @@ function processResponse($responseurl){
  	 if($responseurl != ''){
  	 	$response = file_get_contents($responseurl);
  	 	if(!$response){
-		$response = "Lo siento, no he podido leer bien el mensaje. Vuelve mas tarde por favor!";
+			$response = "Lo siento, no he podido leer bien el mensaje. Vuelve mas tarde por favor!";
  	 	}else{
  	 		$response = json_decode($response, true);
 		}

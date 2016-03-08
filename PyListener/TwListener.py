@@ -5,10 +5,11 @@ import json
 import tweepy
 import os
 import keys
+import urllib
 
 api = keys.getTwitterApi()
 auth = keys.getTwitterAuth()
-
+web = keys.getWebConn()
 
 class CustomStreamListener(tweepy.StreamListener):
     
@@ -35,19 +36,36 @@ class CustomStreamListener(tweepy.StreamListener):
             mentioned_users = [ mention["screen_name"] for mention in mentions ]
                 
             if keys.username in mentioned_users:
-                    
-                print "nueva mension"
+                print ("nueva mension a las " + time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()))
             #-----------------------------------------------------------------------
 	        # update our status with a thank you message directed at the source.
-	    # use try/except to catch potential failures.
-        #-----------------------------------------------------------------------
-                web = httplib.HTTPSConnection('paths.manuchis.com.ar')
-                web.request("GET", "/tweet.php")
+	        # use try/except to catch potential failures.
+            #-----------------------------------------------------------------------
+                
+                f = tweet_json["text"]
+                user = tweet_json["user"]["screen_name"]
+                convo_id = tweet_json["user"]["id"]
+                message_id = tweet_json["id_str"]
+                #say = urllib.urlencode(f)
+                userat = "@" +user
+                say = f.replace(userat, '', 1)
+                params = urllib.urlencode({'say': say, 'convo_id': convo_id, 'user': user, 'format': 'json', 'update': 'update'})
+                headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
+                web.request("POST", "/tweet-py.php", params, headers)
                 r1 = web.getresponse()
+                print r1
+                r2 = json.loads(r1.read())
+                web.close()
+                print r2
+                response = r2
                 print r1.status, r1.reason
-                print r1.read()
-        
+                status = "@" +user+ " " + response['botsay']
+                print status
+                api.update_status(status, message_id)
+                #replyTweet(message_id, status)
         #print ("Stored in MongoDB & replied to: @%s at %s " % (tweet['user']['screen_name'] , time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()) ) )
+   
+
     
     def on_error(self, status):
         

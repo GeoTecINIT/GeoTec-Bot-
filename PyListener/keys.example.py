@@ -1,11 +1,13 @@
 #!/usr/bin/python
 
 import tweepy
+import httplib
 
 consumer_key = 'Your_consumer_Key'
 consumer_secret = 'Your_consumer_secret'
 access_token = 'Your_access_token'
 access_token_secret = 'Your_token_secret'
+web = httplib.HTTPSConnection('www.path.to.your.website.com')
 
 username = "YourUserName"
 

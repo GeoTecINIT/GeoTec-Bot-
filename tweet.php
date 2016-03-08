@@ -1,6 +1,7 @@
 <?php
 
   /***************************************
+	--------------------------------------------- DEPRECATED! USE ONLY IF YOU'RE NOT USING THE PYTHON LISTENER -------------------------------
   * http://www.program-o.com
   * PROGRAM O
   * Version: 2.4.8
