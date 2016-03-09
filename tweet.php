@@ -58,6 +58,7 @@
   $connection->host = "https://api.twitter.com/1.1/";
   $twitterid = $content->id;
 
+
   //--------------------------------------------------------------------------------------------------------------------
   // RUN
   //--------------------------------------------------------------------------------------------------------------------
@@ -96,7 +97,24 @@
 	 $sendbot = ($bot_id == 0) ? '' : "&bot_id=".$bot_id;
 	 // Agrega el identificador de la interface
 	 $convo_id = "twi-".$convo_id;
-     $request_url = $path_to_bot."?say=".urlencode($usersay)."&convo_id=".$convo_id.$sendbot."&format=xml";
+     if(ESTADO_MANTENIMIENTO == 1){  //si está en mantenimiento, enviar mensaje alternativo
+		 	$request_url = new SimpleXMLElement();
+				$program_o = $request_url->addChild('program_o');
+					$program_o->->addChild('version','2.4.8');
+				$status = $request_url->addChild('status');
+					$program_o->->addChild('success','1');
+				$request_url->addChild('bot_id','1');
+				$request_url->addChild('bot_name','Hola Castellon');
+				$request_url->addChild('user_id',$convo_id);
+				$request_url->addChild('user_name','');
+				$chat = $request_url->addChild('chat');
+				$line = $chat->addChild('line');
+					$line->addChild('input', $usersay);
+					$line->addChild('response', ERROR_MANTENIMIENTO);
+
+     }else{
+	     $request_url = $path_to_bot."?say=".urlencode($usersay)."&convo_id=".$convo_id.$sendbot."&format=xml";
+     }
      $conversation = @simplexml_load_file($request_url,"SimpleXmlElement",LIBXML_NOERROR+LIBXML_ERR_FATAL+LIBXML_ERR_NONE);
 
      if((@$conversation)&&(count(@$conversation)>0)){

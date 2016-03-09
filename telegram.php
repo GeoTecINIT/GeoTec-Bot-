@@ -1,7 +1,14 @@
 <?php
+/*********************************** 
+	Load required dependencies
+************************************/
 $type = 'telegram'; require_once('keys.php');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
 require('functions.php');
+
+/*********************************** 
+	Loading Main Functions
+************************************/
 
 function apiRequestWebhook($method, $parameters) {
   if (!is_string($method)) {
@@ -161,21 +168,29 @@ function processMessage($message) {
 
 
 
-if (php_sapi_name() == 'cli') {
-  // if run from console, set or delete webhook
-  apiRequest('setWebhook', array('url' => isset($argv[1]) && $argv[1] == 'delete' ? '' : WEBHOOK_URL));
-  exit;
-}
+
+	if (php_sapi_name() == 'cli') {
+	  // if run from console, set or delete webhook
+	  apiRequest('setWebhook', array('url' => isset($argv[1]) && $argv[1] == 'delete' ? '' : WEBHOOK_URL));
+	  exit;
+	}
 
 
-$content = file_get_contents("php://input");
-$update = json_decode($content, true);
+	$content = file_get_contents("php://input");
+	$update = json_decode($content, true);
+	
+	if (!$update) {
+	  // receive wrong update, must not happen
+	  exit;
+	}
 
-if (!$update) {
-  // receive wrong update, must not happen
-  exit;
-}
-
-if (isset($update["message"])) {
-  processMessage($update["message"]);
-}
+	if(ESTADO_MANTENIMIENTO == 1){ // Escape in case of maintennace
+		$chat_id = $update["message"]['chat']['id'];
+		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => ERROR_MANTENIMIENTO));
+		exit;
+	}else{ // Continue with script
+		if (isset($update["message"])) {
+	  	  processMessage($update["message"]);
+		}	
+	}
+?>

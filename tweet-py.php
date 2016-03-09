@@ -2,10 +2,13 @@
 
   /* --------------------------------------------- FOR USE WITH THE PYTHON LISTENER ------------------------------- */
 
-  
-  $type = 'twitter'; require('keys.php');
-	require_once("functions.php");
-	function processMessage($convo_id, $say, $user) {
+/*********************************** 
+	Load required dependencies
+************************************/  
+$type = 'twitter'; require('keys.php');
+require_once("functions.php");
+
+function processMessage($convo_id, $say, $user) {
 	  // process incoming message
 	  $bot_id = checkBot($say);
 	  $sendbot = ($bot_id == 0) ? '' : "&bot_id=".$bot_id;
@@ -14,14 +17,21 @@
 	  $userat = '@'.$user;
 	  $say = str_ireplace($userat, '', $say);
 	   if (isset($say)) {
-			 $responseurl = PATH_TO_BOT.'?say='.urlencode($say).'&convo_id='.$convo_id.$sendbot.'&format=json';
-		  	 $response = file_get_contents($responseurl);
-			 if(!$response){
-				 $badresponse = Array("convo_id" => $convo_id, "usersay" => $say, "botsay" => "Lo siento, no he podido leer bien el mensaje. Vuelve mas tarde por favor!");
-			 	print json_encode($badresponse);
-			 }else{
-			 	print $response;
-			 }
+		   if(ESTADO_MANTENIMIENTO == 1){ // Escape in case of maintennace
+		   		$badresponse = Array("convo_id" => $convo_id, "usersay" => $say, "botsay" => ERROR_MANTENIMIENTO);
+		    		print json_encode($badresponse);
+		   }else{ // Continue with script
+  				 $responseurl = PATH_TO_BOT.'?say='.urlencode($say).'&convo_id='.$convo_id.$sendbot.'&format=json';
+  		  	  	 $response = file_get_contents($responseurl);
+  				 if(!$response){
+  					 $badresponse = Array("convo_id" => $convo_id, "usersay" => $say, "botsay" => "Lo siento, no he podido leer bien el mensaje. Vuelve mas tarde por favor!");
+  			 		 print json_encode($badresponse);
+  			 	}else{
+  			 		print $response;
+  			 	}
+		   }
+		   
+			 
 	   } 
 	}
 	

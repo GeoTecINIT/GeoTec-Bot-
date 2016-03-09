@@ -1,4 +1,9 @@
 <?php
+
+ /* -------- MAINTENANCE MODE SETTINGS ---- 0 = No - 1 = Yes ------- */
+define('ESTADO_MANTENIMIENTO', 0);
+define('ERROR_MANTENIMIENTO', '[EN MANTENIMIENTO] Lo siento, pero estoy en el servicio mecánico, por favor intenta luego.');
+
 function getBots(){
 	$responseurl = PATH_HOME.'/programo/getbots.php';
 	$response = array();
