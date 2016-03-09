@@ -1,6 +1,6 @@
 <?php
 function getBots(){
-	$responseurl = 'http://paths.manuchis.com.ar/programo/getbots.php';
+	$responseurl = PATH_HOME.'/programo/getbots.php';
 	$response = array();
 	if($responseurl != ''){
 		$response = file_get_contents($responseurl);
