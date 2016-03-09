@@ -1,7 +1,7 @@
 Bot para proyecto GEO-C en UJI. 
 ====================
 
-Actual Version: ALPHA
+Actual Version: 0.1 ALPHA
 > *DO NOT USE!* 
 > NEXT RELEASE WITH PROPER DESCRIPTION AND DOCUMENTATION IS COMING.
 
