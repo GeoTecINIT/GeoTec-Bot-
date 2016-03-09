@@ -28,6 +28,9 @@ $cookie_name = 'Program_O_JSON_GUI';
 
 $convo_id = (isset($_COOKIE[$cookie_name])) ? $_COOKIE[$cookie_name] : jq_get_convo_id($tel);
 
+// Agrega el identificador de la interface
+$convo_id = "sms-".$convo_id;
+
 /* ------- Enviar mensaje -------- */
 
 $responseurl = $path_to_bot.'?say='.rawurlencode($msg).$sendbot.'&convo_id='.$convo_id.'&format=json';

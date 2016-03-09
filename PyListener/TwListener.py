@@ -6,6 +6,7 @@ import tweepy
 import os
 import keys
 import urllib
+import re
 
 api = keys.getTwitterApi()
 auth = keys.getTwitterAuth()
@@ -42,13 +43,11 @@ class CustomStreamListener(tweepy.StreamListener):
 	        # use try/except to catch potential failures.
             #-----------------------------------------------------------------------
                 
-                f = tweet_json["text"]
+                say = tweet_json["text"]
                 user = tweet_json["user"]["screen_name"]
                 convo_id = tweet_json["user"]["id"]
                 message_id = tweet_json["id_str"]
                 #say = urllib.urlencode(f)
-                userat = "@" +user
-                say = f.replace(userat, '', 1)
                 params = urllib.urlencode({'say': say, 'convo_id': convo_id, 'user': user, 'format': 'json', 'update': 'update'})
                 headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
                 web.request("POST", "/tweet-py.php", params, headers)

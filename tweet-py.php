@@ -9,6 +9,10 @@
 	  // process incoming message
 	  $bot_id = checkBot($say);
 	  $sendbot = ($bot_id == 0) ? '' : "&bot_id=".$bot_id;
+	  // Agrega el identificador de la interface
+	  $convo_id = "twi-".$convo_id;
+	  $userat = '@'.$user;
+	  $say = str_ireplace($userat, '', $say);
 	   if (isset($say)) {
 			 $responseurl = PATH_TO_BOT.'?say='.urlencode($say).'&convo_id='.$convo_id.$sendbot.'&format=json';
 		  	 $response = file_get_contents($responseurl);

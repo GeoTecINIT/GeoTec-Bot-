@@ -135,7 +135,9 @@ function processMessage($message) {
 		 $msg = 'hola '.$text;
 		 $getBot = array_search($text, $keyb);
 		 $bot_id = $getBot+2;
-		 $responseurl = PATH_TO_BOT.'?bot_id='.$bot_id.'&say='.rawurlencode($msg).'&convo_id='.$chat_id.'&format=json';
+		 // Agrega el identificador de la interface
+		 $convo_id = "tel-".$chat_id;
+		 $responseurl = PATH_TO_BOT.'?bot_id='.$bot_id.'&say='.rawurlencode($msg).'&convo_id='.$convo_id.'&format=json';
 	  	 $response = processResponse($responseurl);
 		 apiRequest("sendMessage", array('chat_id' => $chat_id, "reply_to_message_id" => $message_id,"text" => $response['botsay']));
 			
@@ -144,7 +146,8 @@ function processMessage($message) {
 		 // debería borrar el registro del bot
        // stop now
      } else if ($text) {
-	  	 $responseurl = PATH_TO_BOT.'?say='.rawurlencode($text).'&convo_id='.$chat_id.'&format=json';
+		 $convo_id = "tel-".$chat_id;
+	  	 $responseurl = PATH_TO_BOT.'?say='.rawurlencode($text).'&convo_id='.$convo_id.'&format=json';
 	  	 $response = processResponse($responseurl);
 		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => $response['botsay']));
      }

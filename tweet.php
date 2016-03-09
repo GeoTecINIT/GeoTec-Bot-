@@ -94,6 +94,8 @@
      $botsay = '';
 	 $bot_id = checkBot($usersay);
 	 $sendbot = ($bot_id == 0) ? '' : "&bot_id=".$bot_id;
+	 // Agrega el identificador de la interface
+	 $convo_id = "twi-".$convo_id;
      $request_url = $path_to_bot."?say=".urlencode($usersay)."&convo_id=".$convo_id.$sendbot."&format=xml";
      $conversation = @simplexml_load_file($request_url,"SimpleXmlElement",LIBXML_NOERROR+LIBXML_ERR_FATAL+LIBXML_ERR_NONE);
 
