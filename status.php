@@ -41,7 +41,8 @@ foreach ($result as $row)
   $bot_id = $row['bot_id'];
   $bot_name = $row['bot_name'];
   $bot_active = $row['bot_active'];
-  $botup = Array('id'=>$bot_id,'name'=>$bot_name, 'status'=>$bot_active);
+  $bot_coord = $row['bot_coord'];
+  $botup = Array('id'=>$bot_id,'name'=>$bot_name, 'status'=>$bot_active, 'coordinates'=>$bot_coord);
   array_push($bots, $botup);
 }
 $status['bots']=$bots;
