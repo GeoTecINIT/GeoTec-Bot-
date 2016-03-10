@@ -129,6 +129,7 @@
       'bot_desc' => FILTER_SANITIZE_STRING,
       'bot_parent_id' => FILTER_SANITIZE_STRING,
       'save_state' => FILTER_SANITIZE_STRING,
+	  'bot_coord' => FILTER_SANITIZE_STRING,
       'remember_up_to' => FILTER_SANITIZE_STRING,
       'conversation_lines' => FILTER_SANITIZE_STRING,
       'debugmode' => FILTER_SANITIZE_STRING,

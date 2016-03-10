@@ -199,6 +199,7 @@
     $bot_active = '';
     $action = "add";
     $bot_format = '';
+	$bot_coord = '';
     $bot_conversation_lines = $conversation_lines;
     //$remember_up_to = $remember_up_to;
     $bot_default_aiml_pattern = $pattern;
@@ -212,7 +213,7 @@
   $searches = array(
     '[bot_id]','[bot_name]','[aiml_count]','[bot_desc]','[parent_options]','[sel_yes]','[sel_no]',
     '[sel_html]','[sel_xml]','[sel_json]','[sel_session]','[sel_db]','[sel_fyes]',
-    '[sel_fno]','[sel_fuyes]','[sel_funo]','[bot_conversation_lines]','[remember_up_to]',
+    '[sel_fno]','[sel_fuyes]','[sel_funo]','[bot_conversation_lines]','[bot_coord]','[remember_up_to]',
     '[bot_debugemail]','[dm_]','[dm_i]','[dm_ii]','[dm_iii]','[ds_]','[ds_i]','[ds_ii]',
     '[ds_iii]','[ds_iv]','[action]', '[bot_default_aiml_pattern]', '[bot_error_response]', '[bot_unknown_user]', '[unknown_user]',
   );
@@ -312,18 +313,18 @@
   }
 
   /** @noinspection PhpUndefinedVariableInspection */
-  $sql = 'INSERT INTO `bots`(`bot_id`, `bot_name`, `bot_desc`, `bot_active`, `bot_parent_id`, `format`, `save_state`, `conversation_lines`, `remember_up_to`, `debugemail`, `debugshow`, `debugmode`, `default_aiml_pattern`, `error_response`)
-VALUES (NULL,:bot_name,:bot_desc,:bot_active,:bot_parent_id,:format,:save_state,:conversation_lines,:remember_up_to,:debugemail,:debugshow,:debugmode,:aiml_pattern,:error_response);';
+  $sql = 'INSERT INTO `bots`(`bot_id`, `bot_name`, `bot_desc`, `bot_active`, `bot_parent_id`, `format`, `save_state`, `conversation_lines`, `bot_coord`, `remember_up_to`, `debugemail`, `debugshow`, `debugmode`, `default_aiml_pattern`, `error_response`)
+VALUES (NULL,:bot_name,:bot_desc,:bot_active,:bot_parent_id,:format,:save_state,:conversation_lines,:bot_coord,:remember_up_to,:debugemail,:debugshow,:debugmode,:aiml_pattern,:error_response);';
   $params = array(
     ':bot_name'           => $bot_name,
-    ':bot_desc'           => $bot_desc,
     ':bot_desc'           => $bot_desc,
     ':bot_active'         => $bot_active,
     ':bot_parent_id'      => $bot_parent_id,
     ':format'             => $format,
     ':save_state'         => $save_state,
     ':conversation_lines' => $conversation_lines,
-    ':remember_up_to'     => $remember_up_to,
+    ':bot_coord'     => $bot_coord,
+	':remember_up_to'     => $remember_up_to,
     ':debugemail'         => $debugemail,
     ':debugshow'          => $debugshow,
     ':debugmode'          => $debugmode,
