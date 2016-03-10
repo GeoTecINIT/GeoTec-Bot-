@@ -19,7 +19,7 @@ include_once(_LIB_PATH_ . 'misc_functions.php');
 ini_set('error_log', _LOG_PATH_ . 'getbots.error.log');
 
 $dbConn = db_open();
-$sql = "select `bot_id`, `bot_name`, `bot_active` from `$dbn`.`bots`;";
+$sql = "select `bot_id`, `bot_name`, `bot_active`, `bot_coord` from `$dbn`.`bots`;";
 $result = db_fetchAll($sql, null, __FILE__, __FUNCTION__, __LINE__);
 
 
