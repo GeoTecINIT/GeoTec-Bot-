@@ -202,3 +202,39 @@ include('code_tag/code_tag.php');
   return $output;
 }
 
+
+/*
+ * function parse_prueba_tag
+ * Parses the custom <php> tag - Please note that this function is currently NOT
+ * complete. It's mearly a placeholder, to illustrate how custom tag functions work.
+ * @param (array) $convoArr
+ * @param (SimpleXMLelement) $element
+ * @param (string) $parentName
+ * @param (int) $level
+ * @return (string) $response_string
+ */
+function utf8_strrev($str){
+    preg_match_all('/./us', $str, $ar);
+    return join('',array_reverse($ar[0]));
+}
+  function parse_prueba_tag($convoArr, $element, $parentName, $level)
+{
+  runDebug(__FILE__, __FUNCTION__, __LINE__, 'Parsing custom PHP tag.', 2);
+  $response = array();
+  $children = $element->children();
+  if (!empty ($children))
+  {
+    $response = parseTemplateRecursive($convoArr, $children, $level + 1);
+  }
+  else
+  {
+    $response[] = (string) $element;
+  }
+  //$response_string = "prueba";
+  
+  $response_string = implode_recursive(' ', $response);
+  $response_string = utf8_strrev($response_string);
+  
+  // do something here
+  return $response_string;
+}
