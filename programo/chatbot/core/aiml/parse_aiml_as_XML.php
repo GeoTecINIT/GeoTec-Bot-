@@ -137,7 +137,7 @@
    * @param int              $level
    * @return string
    */
-  function parseTemplateRecursive($convoArr, SimpleXMLElement $element, $level = 0)
+  function parseTemplateRecursive(&$convoArr, SimpleXMLElement $element, $level = 0)
   {
     runDebug(__FILE__, __FUNCTION__, __LINE__, 'Recursively parsing the AIML template.', 2);
     $HTML_tags = array('a', 'abbr', 'acronym', 'address', 'applet', 'area', 'b', 'bdo', 'big', 'blockquote', 'br', 'button', 'caption', 'center', 'cite', 'code', 'col', 'colgroup', 'dd', 'del', 'dfn', 'dir', 'div', 'dl', 'dt', 'em', 'fieldset', 'font', 'form', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'i', 'iframe', 'img', 'ins', 'kbd', 'label', 'legend', 'ol', 'object', 's', 'script', 'small', 'span', 'strike', 'strong', 'sub', 'sup', 'table', 'tbody', 'td', 'textarea', 'tfoot', 'th', 'thead', 'tr', 'tt', 'u', 'ul');
@@ -414,6 +414,7 @@
     runDebug(__FILE__, __FUNCTION__, __LINE__, "var_name = $var_name and is type: $vn_type", 4);
     if ($var_name == 'name')
     {
+	  $convoArr['client_properties'][$var_name] = $var_value;
       $user_name = $var_value;
       $escaped_var_value = $var_value;
       $sql = "UPDATE `$dbn`.`users` set `user_name` = '$escaped_var_value' where `id` = $user_id;";
@@ -467,6 +468,7 @@
     $response = $var_value;
     $convoArr['client_properties'][$var_name] = $var_value;
     runDebug(__FILE__, __FUNCTION__, __LINE__, "Value for $var_name has ben set. Returning $var_value.", 4);
+	$convoArr['client_properties']['test']='passed';
     return $response;
   }
 

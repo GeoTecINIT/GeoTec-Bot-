@@ -66,7 +66,8 @@
 
     $wordsArr = explode(" ",$sentence);
     $totalWordCount = count($wordsArr);
-
+	$likePatternArr = array();
+	
     for($i=0;$i<$totalWordCount;$i++){
 
 
