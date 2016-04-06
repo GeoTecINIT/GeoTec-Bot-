@@ -58,9 +58,9 @@ class CustomStreamListener(tweepy.StreamListener):
                 print r2
                 response = r2
                 print r1.status, r1.reason
-                status = "@" +user+ " " + response['botsay']
+                status_msg = "@" +user+ " " + response['botsay']
                 print status
-                api.update_status(status, message_id)
+                api.update_status(status=status_msg, message_id)
                 #replyTweet(message_id, status)
         #print ("Stored in MongoDB & replied to: @%s at %s " % (tweet['user']['screen_name'] , time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()) ) )
    
