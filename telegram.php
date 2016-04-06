@@ -146,8 +146,11 @@ function processMessage($message) {
 		 $convo_id = "tel-".$chat_id;
 		 $responseurl = PATH_TO_BOT.'?bot_id='.$bot_id.'&say='.rawurlencode($msg).'&convo_id='.$convo_id.'&format=json';
 	  	 $response = processResponse($responseurl);
+		 if(!$response){
+			apiRequest("sendMessage", array('chat_id' => $chat_id, "reply_to_message_id" => $message_id,"text" => "Ups! Parece que hubo un cortocircuito en mi sistema... ¿qué decías?"));
+		 }else{
 		 apiRequest("sendMessage", array('chat_id' => $chat_id, "reply_to_message_id" => $message_id,"text" => $response['botsay']));
-			
+			}	
 	   
      } else if (strpos($text, "/stop") === 0) {
 		 // debería borrar el registro del bot
@@ -156,7 +159,11 @@ function processMessage($message) {
 		 $convo_id = "tel-".$chat_id;
 	  	 $responseurl = PATH_TO_BOT.'?say='.rawurlencode($text).'&convo_id='.$convo_id.'&format=json';
 	  	 $response = processResponse($responseurl);
-		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => $response['botsay']));
+		 if(!$response){
+	 		apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "Ups! Parece que hubo un cortocircuito en mi sistema... ¿qué decías?"));
+		 }else{
+		 	apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => $response['botsay']));
+		 }
      }
 	 
 	 
