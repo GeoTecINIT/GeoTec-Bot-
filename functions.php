@@ -65,16 +65,36 @@ function jq_get_convo_id($tel)
   setcookie($cookie_name, $convo_id);
   return $convo_id;
 }
+function randomErrorPhrases(){
+	
+	$phrases = array(
+	    'Ups! Parece que hubo un cortocircuito en mi sistema... ¿qué decías?',
+	    'Vale, muy bien. No se que decirte...',
+	    'A que te refieres?',
+		'Ups, me han llamado de otro lado. Me lo repites?',
+		'si, si, si',
+		'¯\_(ツ)_/¯',
+		'Dime algo que no sepa',	
+		'Bueno, si te parece hablamos en otro momento',
+		'AAAahhhhhh, estoy tan agotado... ',
+		'Muy bien, qué te parece si seguimos la conversación más tarde?',
+		'¿Sabes que es mi hora de descanso justo ahora? Hablemos mas tarde por favor.',
+		'¿Te gustan los helados? ¿Podrías ir a comprar uno para regalarselo a alguien?',
+	  );
+
+	  return $phrases[array_rand($phrases)];
+  }
+  
 function processResponse($responseurl){
  	 if($responseurl != ''){
  	 	$response = file_get_contents($responseurl);
  	 	if(!$response){
-			$response = "Lo siento, no he podido leer bien el mensaje. Vuelve mas tarde por favor!";
+			$response['botsay'] = randomErrorPhrases();
  	 	}else{
  	 		$response = json_decode($response, true);
 		}
  	 }else{
- 	 	$response = "No has enviado ningún mensaje, lo siento pero no puedo responderte.";	
+ 	 	$response['botsay'] = "No has enviado ningún mensaje, lo siento pero no puedo responderte.";	
  	 } 
 	 return $response;
 }
