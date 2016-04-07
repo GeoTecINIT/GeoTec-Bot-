@@ -58,9 +58,9 @@ class CustomStreamListener(tweepy.StreamListener):
                 print r2
                 response = r2
                 print r1.status, r1.reason
-                status_msg = "@" +user+ " " + response['botsay']
-                print status
-                api.update_status(status=status_msg, message_id)
+                status_msg = "@" +user.encode('utf-8')+ " " + response['botsay']
+                print status_msg
+                api.update_status(status_msg, message_id)
                 #replyTweet(message_id, status)
         #print ("Stored in MongoDB & replied to: @%s at %s " % (tweet['user']['screen_name'] , time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()) ) )
    
@@ -79,5 +79,7 @@ class CustomStreamListener(tweepy.StreamListener):
 
 
 sapi = tweepy.streaming.Stream(auth, CustomStreamListener(api))
-sapi.filter(track=[keys.username])
+kuser = keys.username
+kuse = kuser.encode('utf-8')
+sapi.filter(track=[kuse])
     
