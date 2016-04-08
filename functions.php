@@ -80,6 +80,7 @@ function randomErrorPhrases(){
 		'Muy bien, qué te parece si seguimos la conversación más tarde?',
 		'¿Sabes que es mi hora de descanso justo ahora? Hablemos mas tarde por favor.',
 		'¿Te gustan los helados? ¿Podrías ir a comprar uno para regalarselo a alguien?',
+		'¿Por qué no aprovechas a suscribirte a mi lista de correos para ayudarnos a mejorar mi plataforma? http://holabot.es/suscribirse.php'
 	  );
 
 	  return $phrases[array_rand($phrases)];
