@@ -35,6 +35,13 @@ if(ESTADO_MANTENIMIENTO == 1){  /// Escape in case of maintennace
 	$status['level'] = 0;
 	$status['maintenance'] = Array('status'=>0, 'message'=>'Ok');
 }
+
+// twitter caido
+// $status['level'] = 1; $status['maintenance'] = Array('status'=>2, 'message'=>'Error en Twitter'); 
+
+// telegram caido
+//$status['level'] = 1; $status['maintenance'] = Array('status'=>3, 'message'=>'Error en Telegram'); 
+
 $bots = array();
 foreach ($result as $row)
 {
