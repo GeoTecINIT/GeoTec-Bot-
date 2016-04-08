@@ -110,15 +110,6 @@ def start_stream():
             sapi.filter(track=[kuse])
         except (KeyboardInterrupt, SystemExit):
                 raise
-        except tweetstream.ConnectionError as e:
-            print e.message + " time: " + datetime.now
-            time.sleep(200)
-            pass
-        except tweetstream.AuthenticationError as e:
-            now = datetime.datetime.now()
-            print e.message  + " time: " + str(now)
-            pass
         except: 
             continue
-
 start_stream()
