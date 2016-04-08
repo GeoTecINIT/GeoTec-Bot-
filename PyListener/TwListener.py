@@ -1,9 +1,10 @@
 #!/usr/bin/python
+ # coding: latin-1
+import os, sys
 import time
 import httplib
 import json
 import tweepy
-import os
 import keys
 import urllib
 import re
@@ -58,7 +59,24 @@ class CustomStreamListener(tweepy.StreamListener):
                 print r2
                 response = r2
                 print r1.status, r1.reason
-                status_msg = "@" +user.encode('utf-8')+ " " + response['botsay']
+                msg = response['botsay']
+            	phrases = [
+            	    'Ups! Parece que hubo un cortocircuito en mi sistema... ¿qué decías?',
+            	    'Vale, muy bien. No se que decirte...',
+            	    'A que te refieres?',
+            		'Ups, me han llamado de otro lado. Me lo repites?',
+            		'si, si, si',
+            		'¯\_(ツ)_/¯',
+            		'Dime algo que no sepa',	
+            		'Bueno, si te parece hablamos en otro momento',
+            		'AAAahhhhhh, estoy tan agotado... ',
+            		'Muy bien, qué te parece si seguimos la conversación más tarde?',
+            		'¿Sabes que es mi hora de descanso justo ahora? Hablemos mas tarde por favor.',
+            		'¿Te gustan los helados? ¿Podrías ir a comprar uno para regalarselo a alguien?',
+            	  ]
+                if msg == "":
+                    msg = random.choice(phrases).encode('utf-8') 
+                status_msg = "@" +user.encode('utf-8')+ " " + msg
                 print status_msg
                 api.update_status(status_msg, message_id)
                 #replyTweet(message_id, status)
