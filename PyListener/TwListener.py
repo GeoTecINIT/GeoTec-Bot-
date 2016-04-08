@@ -48,11 +48,12 @@ class CustomStreamListener(tweepy.StreamListener):
                 user = tweet_json["user"]["screen_name"]
                 convo_id = tweet_json["user"]["id"]
                 message_id = tweet_json["id_str"]
+                print say
                 #say = urllib.urlencode(f)
-                params = urllib.urlencode({'say': say, 'convo_id': convo_id, 'user': user, 'format': 'json', 'update': 'update'})
+                params = urllib.urlencode({'say': say.encode('utf-8'), 'convo_id': convo_id, 'user': user, 'format': 'json', 'update': 'update'})
                 headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
-                web.request("POST", "/tweet-py.php", params, headers)
                 print ("se envía petición a las " + time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()))
+                web.request("POST", "/tweet-py.php", params, headers)
                 r1 = web.getresponse()
                 print ("se recibe petición a las " + time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()))
                 print r1
@@ -81,7 +82,17 @@ class CustomStreamListener(tweepy.StreamListener):
                 
                 status_msg = "@" +user.encode('utf-8')+ " " + msg
                 print status_msg
-                api.update_status(status_msg, message_id)
+                
+                while True:
+                    try:
+                        api.update_status(status_msg, message_id)
+                    except TweepError:
+                            print TweepError.message[0]['code']
+                            raise
+                    except: 
+                        continue
+                
+                print "---------------"
                 #replyTweet(message_id, status)
         #print ("Stored in MongoDB & replied to: @%s at %s " % (tweet['user']['screen_name'] , time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()) ) )
    
@@ -89,8 +100,9 @@ class CustomStreamListener(tweepy.StreamListener):
     
     def on_error(self, status):
         
-        print "error"
+        print "error: proceeding to sleep and restart"
         print status
+        time.sleep(2000)
         return True # Don't kill the stream
     
     def on_timeout(self):
