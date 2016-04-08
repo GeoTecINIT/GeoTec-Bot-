@@ -52,7 +52,9 @@ class CustomStreamListener(tweepy.StreamListener):
                 params = urllib.urlencode({'say': say, 'convo_id': convo_id, 'user': user, 'format': 'json', 'update': 'update'})
                 headers = {"Content-type": "application/x-www-form-urlencoded","Accept": "text/plain"}
                 web.request("POST", "/tweet-py.php", params, headers)
+                print ("se envía petición a las " + time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()))
                 r1 = web.getresponse()
+                print ("se recibe petición a las " + time.strftime("%a, %d %b %Y %H:%M:%S +0000", time.gmtime()))
                 print r1
                 r2 = json.loads(r1.read())
                 web.close()
@@ -60,22 +62,23 @@ class CustomStreamListener(tweepy.StreamListener):
                 response = r2
                 print r1.status, r1.reason
                 msg = response['botsay']
-            	phrases = [
-            	    'Ups! Parece que hubo un cortocircuito en mi sistema... ¿qué decías?',
-            	    'Vale, muy bien. No se que decirte...',
-            	    'A que te refieres?',
-            		'Ups, me han llamado de otro lado. Me lo repites?',
-            		'si, si, si',
-            		'¯\_(ツ)_/¯',
-            		'Dime algo que no sepa',	
-            		'Bueno, si te parece hablamos en otro momento',
-            		'AAAahhhhhh, estoy tan agotado... ',
-            		'Muy bien, qué te parece si seguimos la conversación más tarde?',
-            		'¿Sabes que es mi hora de descanso justo ahora? Hablemos mas tarde por favor.',
-            		'¿Te gustan los helados? ¿Podrías ir a comprar uno para regalarselo a alguien?',
-            	  ]
-                if msg == "":
-                    msg = random.choice(phrases).encode('utf-8') 
+#            	phrases = [
+#            	    'Ups! Parece que hubo un cortocircuito en mi sistema... ¿qué decías?',
+#            	    'Vale, muy bien. No se que decirte...',
+#            	    'A que te refieres?',
+#            		'Ups, me han llamado de otro lado. Me lo repites?',
+#            		'si, si, si',
+#            		'¯\_(ツ)_/¯',
+#            		'Dime algo que no sepa',	
+#            		'Bueno, si te parece hablamos en otro momento',
+#            		'AAAahhhhhh, estoy tan agotado... ',
+#            		'Muy bien, qué te parece si seguimos la conversación más tarde?',
+#            		'¿Sabes que es mi hora de descanso justo ahora? Hablemos mas tarde por favor.',
+#            		'¿Te gustan los helados? ¿Podrías ir a comprar uno para regalarselo a alguien?',
+#            	  ]
+#                if msg == "":
+#                    msg = random.choice(phrases).encode('utf-8') 
+                
                 status_msg = "@" +user.encode('utf-8')+ " " + msg
                 print status_msg
                 api.update_status(status_msg, message_id)
@@ -105,6 +108,16 @@ def start_stream():
         try:
             sapi = tweepy.streaming.Stream(auth, CustomStreamListener(api))
             sapi.filter(track=[kuse])
+        except (KeyboardInterrupt, SystemExit):
+                raise
+        except tweetstream.ConnectionError as e:
+            print e.message + " time: " + datetime.now
+            time.sleep(200)
+            pass
+        except tweetstream.AuthenticationError as e:
+            now = datetime.datetime.now()
+            print e.message  + " time: " + str(now)
+            pass
         except: 
             continue
 
