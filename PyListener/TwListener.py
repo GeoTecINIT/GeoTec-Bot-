@@ -78,8 +78,16 @@ class CustomStreamListener(tweepy.StreamListener):
         return True # Don't kill the stream
 
 
-sapi = tweepy.streaming.Stream(auth, CustomStreamListener(api))
+
 kuser = keys.username
 kuse = kuser.encode('utf-8')
-sapi.filter(track=[kuse])
-    
+
+def start_stream():
+    while True:
+        try:
+            sapi = tweepy.streaming.Stream(auth, CustomStreamListener(api))
+            sapi.filter(track=[kuse])
+        except: 
+            continue
+
+start_stream()
