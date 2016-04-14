@@ -28,16 +28,16 @@
   $dbConn = db_open();
   if($bot != ""){
 	  $sql1 = "SELECT COUNT(*) as total from `conversation_log` WHERE `bot_id` = '$bot';";
-	  $sql = "SELECT DATE(`timestamp`) AS day, COUNT(*) AS logs_count from `conversation_log` WHERE `bot_id` = '$bot' GROUP BY day ORDER BY `timestamp` ASC;";
+	  $sql = "SELECT user_id as bot, DATE(timestamp) as day, id as total from `conversation_log` WHERE bot_id = '$bot' GROUP BY day, user_id ORDER BY day ASC;";
   }else if($user != ""){
 	  $sql1 = "SELECT COUNT(*) as total from `conversation_log` WHERE `user_id` = '$user';";
-	  $sql = "SELECT DATE(`timestamp`) AS day, COUNT(*) AS logs_count from `conversation_log` WHERE `user_id` = '$user'  GROUP BY day ORDER BY `timestamp` ASC;";
+	  $sql = "SELECT bots.bot_name as bot, DATE(conversation_log.timestamp) as day, conversation_log.id as total from `conversation_log` LEFT JOIN bots ON conversation_log.bot_id=bots.bot_id WHERE conversation_log.user_id = '$user' GROUP BY day, conversation_log.bot_id ORDER BY day ASC;";
   }else if($day != ""){
 	  $sql1 = "SELECT COUNT(*) as total from `conversation_log` WHERE DATE(`timestamp`) = '$day';";
 	  $sql = "SELECT `timestamp`, `user_id`, `bot_id`, `org_input`, `response` from `conversation_log` WHERE DATE(`timestamp`) = '$day' ORDER BY `timestamp` ASC;";
   }else if($s != ""){
 	  $sql1 = "SELECT COUNT(*) as total from `conversation_log`";
-	  $sql = "SELECT bots.bot_name as bot, DATE(conversation_log.timestamp) as day, COUNT(conversation_log.id) as total  FROM `conversation_log` LEFT JOIN bots ON conversation_log.bot_id=bots.bot_id GROUP BY conversation_log.bot_id, day;";
+	  $sql = "SELECT bots.bot_name as bot, DATE(conversation_log.timestamp) as day, conversation_log.id as total  FROM `conversation_log` LEFT JOIN bots ON conversation_log.bot_id=bots.bot_id GROUP BY conversation_log.bot_id, day;";
   }else{
 	  $sql1 = "SELECT COUNT(*) as total from `conversation_log`";
 	  $sql = "SELECT `id`, `bot_id`, COUNT(*) as total from `conversation_log` GROUP BY `bot_id`;";
